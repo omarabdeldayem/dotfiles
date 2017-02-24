@@ -20,28 +20,28 @@ call vundle#end()
 filetype plugin indent on
 
 " COLOURS
-colorscheme molokai	                " Set colorscheme
-syntax enable		                " Enable syntax processing
+colorscheme molokai                 " Set colorscheme
+syntax enable                       " Enable syntax processing
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 set laststatus=2                    " Show airline
 
 " SPACES & TABS
-set tabstop=4		                " Insert 4 spaces on tab
+set tabstop=4                       " Insert 4 spaces on tab
 set softtabstop=4
 set expandtab
 
 " CONFIG UI
 set number                          " Show line numbers
-set cursorline		                " Highlight current line
-filetype indent on	                " Load filetype-specific indent files
-set wildmenu		                " Show autocomplete options
+set cursorline                      " Highlight current line
+filetype indent on                  " Load filetype-specific indent files
+set wildmenu                        " Show autocomplete options
+set showmatch                       " Highlight matching parenthesis
 set lazyredraw
-set showmatch		                " Highlight matching parenthesis
 
 " SEARCH
-set incsearch		                " Search as characters are entered
-set hlsearch		                " Highlight matches
+set incsearch                       " Search as characters are entered
+set hlsearch                        " Highlight matches
 " Turn off highlighted matches with space
 nnoremap <leader><space> :nohlsearch<CR>
 
