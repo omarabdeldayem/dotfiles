@@ -1,11 +1,8 @@
-        # Change $PATH if necessary 
+# Change $PATH if necessary 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
-# Use additional glyphs
-POWERLEVEL9K_MODE='awesome-fontconfig'
 
 # Set name of the theme to load
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -53,15 +50,28 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git vim-interaction zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Setup $lang_home variables
+export SCALA_HOME="$HOME/scala-2.12.1"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Put Scala on the path
+if [ -d "$HOME/scala-2.12.1" ] ; then
+    export PATH="$SCALA_HOME/bin:$PATH"
+fi
+
+# Put Java on the path
+if [ -d "/usr/lib/jvm/java-8-oracle" ] ; then
+    export PATH="$JAVA_HOME/bin:$JAVA_HOME/db/bin:$JAVA_HOME/jre/bin:$PATH"
+fi
+
+if [ -d "$HOME/julia" ] ; then
+    export PATH="$HOME/julia:$PATH"
+fi
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -79,11 +89,5 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="gvim ~/.zshrc"
+alias ohmyzsh="gvim ~/.oh-my-zsh"
