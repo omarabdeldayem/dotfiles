@@ -1,6 +1,3 @@
-# Change $PATH if necessary 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -55,8 +52,13 @@ plugins=(git vim-interaction zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Setup $lang_home variables
+export CONDA_HOME="$HOME/anaconda3"
 export SCALA_HOME="$HOME/scala-2.12.1"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
+if [ -d "$CONDA_HOME" ] ; then
+    export PATH="$CONDA_HOME/bin:$PATH"
+fi
 
 # Put Scala on the path
 if [ -d "$HOME/scala-2.12.1" ] ; then
@@ -68,8 +70,21 @@ if [ -d "/usr/lib/jvm/java-8-oracle" ] ; then
     export PATH="$JAVA_HOME/bin:$JAVA_HOME/db/bin:$JAVA_HOME/jre/bin:$PATH"
 fi
 
+# Put Julia on the path
 if [ -d "$HOME/julia" ] ; then
     export PATH="$HOME/julia:$PATH"
+fi
+
+# Python environment manager
+if [ -d "$HOME/.pyenv" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Put Quartus on the path
+if [ -d "$HOME/intelFPGA_lite" ]; then
+    export PATH="$HOME/intelFPGA_lite/16.1/quartus/bin:$PATH"
 fi
 
 
@@ -88,6 +103,8 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 alias zshconfig="gvim ~/.zshrc"
 alias ohmyzsh="gvim ~/.oh-my-zsh"
