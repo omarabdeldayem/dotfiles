@@ -56,6 +56,7 @@ export CONDA_HOME="$HOME/anaconda3"
 export SCALA_HOME="$HOME/scala-2.12.1"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
+
 if [ -d "$CONDA_HOME" ] ; then
     export PATH="$CONDA_HOME/bin:$PATH"
 fi
@@ -87,7 +88,8 @@ if [ -d "$HOME/intelFPGA_lite" ]; then
     export PATH="$HOME/intelFPGA_lite/16.1/quartus/bin:$PATH"
 fi
 
-
+export QSYS_ROOTDIR="$HOME/intelFPGA_lite/16.1/quartus/sopc_builder/bin"
+;
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
