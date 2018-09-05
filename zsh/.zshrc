@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
+export TERM="xterm-256color"
 
 # Set name of the theme to load
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -56,7 +57,7 @@ export CONDA_HOME="$HOME/anaconda3"
 export SCALA_HOME="$HOME/scala-2.12.1"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
-
+# Put Anaconda on the path
 if [ -d "$CONDA_HOME" ] ; then
     export PATH="$CONDA_HOME/bin:$PATH"
 fi
@@ -76,29 +77,16 @@ if [ -d "$HOME/julia" ] ; then
     export PATH="$HOME/julia:$PATH"
 fi
 
-# Python environment manager
-if [ -d "$HOME/.pyenv" ]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
 # Put Quartus on the path
 if [ -d "$HOME/intelFPGA_lite" ]; then
     export PATH="$HOME/intelFPGA_lite/16.1/quartus/bin:$PATH"
 fi
 
 export QSYS_ROOTDIR="$HOME/intelFPGA_lite/16.1/quartus/sopc_builder/bin"
-;
+export ROBOSCHOOL_PATH="$HOME/Development/roboschool"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,5 +96,10 @@ export QSYS_ROOTDIR="$HOME/intelFPGA_lite/16.1/quartus/sopc_builder/bin"
 
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
+# ALIASES
 alias zshconfig="gvim ~/.zshrc"
 alias ohmyzsh="gvim ~/.oh-my-zsh"
+alias g="gvim -p"
+alias v="vim -p"
+alias hi="history"
+alias tor="/home/omar/Downloads/tor-browser_en-US/start-tor-browser.desktop"

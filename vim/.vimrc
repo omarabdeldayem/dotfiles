@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " General Plugins
-Plugin 'altercation/vim-colors-solarized' 
+Plugin 'altercation/vim-colors-solarized'   " Solarized theme 
 Plugin 'sjl/gundo.vim'                      " Visualize vim undo tree
 Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy finder
 Plugin 'tpope/vim-fugitive'                 " Git wrapper
@@ -17,10 +17,16 @@ Plugin 'scrooloose/nerdtree'                " Tree explorer plugin
 Plugin 'xuyuanp/nerdtree-git-plugin'        " Git plugin for NERDTree
 Plugin 'valloric/youcompleteme'             " Codecompletion engine
 Plugin 'vim-airline/vim-airline'            " Command bar 
+Plugin 'majutsushi/tagbar'                  " Tag bar
 " Language Specific
 Plugin 'c.vim'                              " C/C++ IDE
+Plugin 'vhda/verilog_systemverilog.vim'     " Verilog/SystemVerilog
+Plugin 'derekwyatt/vim-scala'               " Scala
 call vundle#end()
 filetype plugin indent on
+
+" Toggle the tagbar window
+nmap <F8> :TagbarToggle<CR>
 
 " NERDTree auto-startup
 " autocmd vimenter * NERDTree
@@ -42,6 +48,7 @@ set laststatus=2                            " Show airline
 " SPACES & TABS
 set tabstop=4                               " Insert 4 spaces on tab
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " CONFIG UI
