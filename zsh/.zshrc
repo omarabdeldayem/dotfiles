@@ -84,9 +84,7 @@ fi
 
 export QSYS_ROOTDIR="$HOME/intelFPGA_lite/16.1/quartus/sopc_builder/bin"
 export ROBOSCHOOL_PATH="$HOME/Development/roboschool"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export NNN_USE_EDITOR=1
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -33,12 +33,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " COLOURS
 syntax enable                               " Enable syntax processing
-let g:solarized_termcolors=256
-if has('gui_running')
-    set background=dark
-else
-    set background=light
-endif
+set background=dark
 
 colorscheme solarized                       " Set colorscheme
 set colorcolumn=110
