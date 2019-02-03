@@ -22,6 +22,7 @@ Plugin 'majutsushi/tagbar'                  " Tag bar
 Plugin 'c.vim'                              " C/C++ IDE
 Plugin 'vhda/verilog_systemverilog.vim'     " Verilog/SystemVerilog
 Plugin 'derekwyatt/vim-scala'               " Scala
+Plugin 'JuliaEditorSupport/julia-vim'       " Julia
 call vundle#end()
 filetype plugin indent on
 
