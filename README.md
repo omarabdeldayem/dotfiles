@@ -1,2 +1,5 @@
-# dotfiles
-Linux env
+# Dotfiles 
+Linux environment.
+
+### Action shot:
+![Screenshot](terminal.png)
