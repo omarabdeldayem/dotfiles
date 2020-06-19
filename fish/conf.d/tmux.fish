@@ -1,3 +1,5 @@
 if not set -q TMUX
-  tmux new $SHELL
+    set -g TMUX tmux new-session -d -s base
+    eval $TMUX
+    tmux attach-session -d -t base
 end
