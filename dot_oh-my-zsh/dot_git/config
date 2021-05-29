@@ -1,0 +1,23 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	eol = lf
+	autocrlf = false
+[remote "origin"]
+	url = git://github.com/robbyrussell/oh-my-zsh.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[fsck]
+	zeroPaddedFilemode = ignore
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+[receive "fsck"]
+	zeroPaddedFilemode = ignore
+[rebase]
+	autoStash = true
+[oh-my-zsh]
+	lastVersion = 2d40b562e5da4c885babc1f7f09aa33a8a891eb2
