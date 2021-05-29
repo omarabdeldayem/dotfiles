@@ -1,0 +1,13 @@
+# pack-refs with: peeled fully-peeled sorted 
+3a732aa7d4e6d311e47e6e717653ca153d76b5ba refs/remotes/origin/add-license-1
+4ad0edbc27a6845904e7bb6d3f5e129fdb1b36f6 refs/remotes/origin/chris
+886e6440f53a6edd0ee71a1d679ed323706c7df9 refs/remotes/origin/lua
+0faffcf369538e72a3be5b6e76ba4b5cb10bd142 refs/remotes/origin/lua-config
+611da6f81ed3f5cbcdae7b99a5f441cf314c2cd4 refs/remotes/origin/lunarvim
+66501fefe7ad7742a36cae147b7efa72a36e289b refs/remotes/origin/master
+6872d69d7cd55bd42a11e61b884933e24d736b00 refs/remotes/origin/native-LSP
+1853b4f2aa13b83ff542171060f92d3d4d961a68 refs/remotes/origin/nvcode
+bb1cf1cbe12bdc7de6069b15fa902c95fcbe933f refs/remotes/origin/stable
+56f65b12a446fe05483a23585dd4e3104205b062 refs/remotes/origin/stable-snapshot-CoC
+d002b0419a8621c5575c14119d0b8d9c4a7a44a0 refs/remotes/origin/stable-snapshot-Native-LSP-1
+07356c9e41404c58fc80de891ca8fff650822898 refs/remotes/origin/test-opt-install
