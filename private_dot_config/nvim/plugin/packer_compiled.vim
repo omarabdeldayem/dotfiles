@@ -121,6 +121,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/omar/.local/share/nvim/site/pack/packer/opt/git-blame.nvim"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/start/git-worktree.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -186,11 +190,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-dap"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = false,

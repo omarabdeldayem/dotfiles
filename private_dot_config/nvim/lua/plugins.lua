@@ -31,9 +31,6 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when th
 return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
-
-    -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
-    use {"neovim/nvim-lspconfig", opt = true}
     use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {"folke/trouble.nvim", opt = true}
@@ -61,7 +58,6 @@ return require("packer").startup(function(use)
     -- Explorer
     use {"kyazdani42/nvim-tree.lua", opt = true}
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
-    -- TODO remove when open on dir is supported by nvimtree
     use "kevinhwang91/rnvimr"
 
     -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
@@ -88,6 +84,7 @@ return require("packer").startup(function(use)
 
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
+    use {"neovim/nvim-lspconfig"}
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
@@ -147,6 +144,7 @@ return require("packer").startup(function(use)
 
     -- Git
     use {'tpope/vim-fugitive', opt = true}
+    use {'ThePrimeagen/git-worktree.nvim'}
     -- use {'tpope/vim-rhubarb', opt = true}
     -- pwntester/octo.nvim
 

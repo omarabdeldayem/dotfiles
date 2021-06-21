@@ -109,6 +109,8 @@ local mappings = {
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
         C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
+        w = {"<cmd>Telescope git_worktree create_git_worktree<cr>", "Create a new worktree"},
+        W = {"<cmd>Telescope git_worktree git_worktrees<cr>", "View worktrees"},
     },
     l = {
         name = "+LSP",
