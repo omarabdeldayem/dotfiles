@@ -23,13 +23,13 @@ font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = eth
-modules-center = i3
+modules-left = eth 
+modules-center = memory cpu 
 modules-right = date powermenu
 
-;i3:Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
+# ;i3:Make the bar appear below windows
+# ;wm-restack = i3
+# ;override-redirect = true
 
 tray-position = right
 tray-detached = true
@@ -37,35 +37,6 @@ tray-detached = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-label-mode-padding = 2
-label-mode-foreground = #282a2e
-label-mode-background = #1d1f21
-
-label-focused = %index%
-label-focused-background = #5f819d
-label-focused-foreground = #1d1f21
-label-focused-padding = 2
-
-label-unfocused = %index%
-label-unfocused-background = #81a2be
-label-unfocused-foreground = #1d1f21
-label-unfocused-padding = 2
-
-label-visible = %index%
-label-visible-background = #81a2be
-label-visible-foreground = #1d1f21
-label-visible-padding = 2
-
-label-urgent = %index%
-label-urgent-background = #BA2922
-label-urgent-padding = 2
 
 [module/eth]
 type = internal/network
@@ -77,7 +48,7 @@ format-connected-foreground = #1d1f21
 format-connected-background = #81a2be
 format-connected-prefix = " "
 format-connected-prefix-foreground = #1d1f21
-label-connected = %local_ip%
+label-connected = %local_ip% ▼ %downspeed% ▲ %upspeed%
 
 format-disconnected =
 
@@ -134,9 +105,114 @@ menu-3-0-exec = i3 exit logout
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
 
+[module/memory]
+type = internal/memory
+interval = 3 
+warn-percentage = 95
+format = <label> <bar-used>
+label = RAM %gb_used%/%gb_free%
+bar-used-indicator =
+bar-used-width = 7 
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+[module/cpu]
+type = internal/cpu
+interval = 1 
+warn-percentage = 95
+format = <label> <ramp-coreload>
+label = CPU %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+; New in version 3.6.0
+label-warn = CPU %percentage%%
+
+; Spacing (number of spaces, pixels, points) between individual per-core ramps
+ramp-coreload-spacing = 1 
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
 [settings]
 screenchange-reload = true
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
+
+[bar/bottom]
+width = 100%
+offset-x = 25%
+height = 27
+radius = 0
+fixed-center = true
+bottom = true
+
+background = #1d1f21
+foreground = #c5c8c6
+
+line-size = 3
+line-color =
+
+font-0 = "Source Code Pro Semibold:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
+font-2 = "Font Awesome 5 Brands:size=10;1"
+
+modules-left = 
+modules-center = i3
+modules-right = 
+
+;i3:Make the bar appear below windows
+;wm-restack = i3
+;override-redirect = true
+
+# tray-position = right
+# tray-detached = true
+# ;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #282a2e
+label-mode-background = #1d1f21
+
+label-focused = %index%
+label-focused-background = #5f819d
+label-focused-foreground = #1d1f21
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = #81a2be
+label-unfocused-foreground = #1d1f21
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #81a2be
+label-visible-foreground = #1d1f21
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+

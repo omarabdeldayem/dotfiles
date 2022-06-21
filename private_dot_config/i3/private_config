@@ -19,7 +19,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/ribbon/launcher.sh
 
 # change focus
 bindsym $mod+j focus left
@@ -215,6 +215,7 @@ exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 # Theme colors
 client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
