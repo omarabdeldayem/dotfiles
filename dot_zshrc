@@ -18,7 +18,7 @@ plugins=(
   jira
 )
 
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 source $ZSH/oh-my-zsh.sh
 . ~/z.sh
@@ -48,8 +48,11 @@ alias lg="lazygit"
 alias resetbg="source ~/neovim-config/toggle_bg.sh"
 alias togglebg="source ~/neovim-config/toggle_bg.sh toggle"
 alias ctags="universal-ctags"
+alias clashi="clash --interactive"
+alias vivado="/home/omar/Xilinx/Vivado/2021.1/bin/vivado"
+alias xsct="/home/omar/Xilinx/Vitis/2021.1/bin/xsct"
 
-export PATH=$PATH:/usr/local/go/bin:~/go/bin:~/.local/bin
+export PATH=$PATH:/home/omar/julia-1.6.2/bin:/usr/local/go/bin:~/go/bin:~/.local/bin:~/bin
 export LESS=R
 export EDITOR=nvim
 export MANPAGER="nvim -c 'set ft=man' -"
@@ -57,6 +60,7 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export LESS=R
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=magenta,bold,underline"
 setopt HIST_IGNORE_ALL_DUPS
+export LM_LICENSE_FILE=/home/oabdeldayem/licenses/LR-083692_License.dat
 
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
@@ -159,3 +163,5 @@ fi
 unset __conda_setup
 [ -f "/home/omar/.ghcup/env" ] && source "/home/omar/.ghcup/env" # ghcup-env
 if [ -e /home/omar/.nix-profile/etc/profile.d/nix.sh ]; then . /home/omar/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+eval "$(starship init zsh)"
