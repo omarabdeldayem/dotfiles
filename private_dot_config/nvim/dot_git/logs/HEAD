@@ -3,3 +3,13 @@ e1cdf92a01c6fe88e70abde2f0d7d3144262038d e1cdf92a01c6fe88e70abde2f0d7d3144262038
 e1cdf92a01c6fe88e70abde2f0d7d3144262038d e1cdf92a01c6fe88e70abde2f0d7d3144262038d Omar Abdeldayem <omar.abdeldayem@outlook.com> 1648933151 -0700	reset: moving to e1cdf92a01c6fe88e70abde2f0d7d3144262038d
 e1cdf92a01c6fe88e70abde2f0d7d3144262038d 03563f30cc36c96562a945bfd6bcd21d6b0d62de Omar Abdeldayem <omar.abdeldayem@outlook.com> 1648933151 -0700	pull --set-upstream https://github.com/NvChad/NvChad main --rebase: checkout 03563f30cc36c96562a945bfd6bcd21d6b0d62de
 03563f30cc36c96562a945bfd6bcd21d6b0d62de 03563f30cc36c96562a945bfd6bcd21d6b0d62de Omar Abdeldayem <omar.abdeldayem@outlook.com> 1648933151 -0700	rebase finished: refs/heads/main onto 03563f30cc36c96562a945bfd6bcd21d6b0d62de
+03563f30cc36c96562a945bfd6bcd21d6b0d62de 03563f30cc36c96562a945bfd6bcd21d6b0d62de Omar Abdeldayem <omar.abdeldayem@outlook.com> 1656340568 -0700	reset: moving to 03563f30cc36c96562a945bfd6bcd21d6b0d62de
+03563f30cc36c96562a945bfd6bcd21d6b0d62de dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1656340569 -0700	pull --set-upstream https://github.com/NvChad/NvChad main --rebase: Fast-forward
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1657392611 -0700	checkout: moving from main to main
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1657392617 -0700	reset: moving to dbb34399828eef32cc65d9dcad3c41119a5e9d65
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1657392617 -0700	reset: moving to HEAD
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1657405073 -0700	checkout: moving from main to dbb3439
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1658499135 -0700	checkout: moving from dbb34399828eef32cc65d9dcad3c41119a5e9d65 to main
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 dbb34399828eef32cc65d9dcad3c41119a5e9d65 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1658499141 -0700	reset: moving to dbb34399828eef32cc65d9dcad3c41119a5e9d65
+dbb34399828eef32cc65d9dcad3c41119a5e9d65 6f0aa376a8f8e52d33cede45e903767644c7e401 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1658499142 -0700	pull --set-upstream https://github.com/NvChad/NvChad main --rebase: Fast-forward
+6f0aa376a8f8e52d33cede45e903767644c7e401 6f0aa376a8f8e52d33cede45e903767644c7e401 Omar Abdeldayem <omar.abdeldayem@outlook.com> 1658499176 -0700	checkout: moving from main to main
