@@ -2,6 +2,14 @@ local M = {}
 
 local load_override = require("core.utils").load_override
 
+M.nvchad_ui = function()
+  local present, nvchad_ui = pcall(require, "nvchad_ui")
+
+  if present then
+    nvchad_ui.setup()
+  end
+end
+
 M.autopairs = function()
   local present1, autopairs = pcall(require, "nvim-autopairs")
   local present2, cmp = pcall(require, "cmp")
@@ -137,12 +145,15 @@ M.gitsigns = function()
 
   local options = {
     signs = {
-      add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
-      change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
-      delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr" },
-      topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
-      changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
+      add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+      change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+      delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+      topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+      changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
     },
+    signcolumn = true,
+    numhl = true,
+    linehl = false,
   }
 
   options = load_override(options, "lewis6991/gitsigns.nvim")

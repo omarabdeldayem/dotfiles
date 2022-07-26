@@ -271,7 +271,6 @@ M.telescope = {
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "   git commits" },
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "  git status" },
-
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "   pick hidden term" },
 
