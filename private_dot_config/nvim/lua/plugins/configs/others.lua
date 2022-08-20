@@ -49,7 +49,7 @@ M.blankline = function()
       "lspinfo",
       "TelescopePrompt",
       "TelescopeResults",
-      "lsp-installer",
+      "Mason",
       "",
     },
     buftype_exclude = { "terminal" },
@@ -145,15 +145,12 @@ M.gitsigns = function()
 
   local options = {
     signs = {
-      add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-      change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-      delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-      topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-      changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+      add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
+      change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
+      delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr" },
+      topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
+      changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
     },
-    signcolumn = true,
-    numhl = true,
-    linehl = false,
   }
 
   options = load_override(options, "lewis6991/gitsigns.nvim")

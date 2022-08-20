@@ -3,7 +3,12 @@ vim.cmd "packadd packer.nvim"
 local plugins = {
 
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
-  ["wbthomason/packer.nvim"] = {},
+  ["wbthomason/packer.nvim"] = {
+    cmd = require("core.lazy_load").packer_cmds,
+    config = function()
+      require "plugins"
+    end,
+  },
   ["NvChad/extensions"] = { module = { "telescope", "nvchad" } },
 
   ["NvChad/base46"] = {
@@ -28,9 +33,13 @@ local plugins = {
     config = function()
       require "plugins.configs.nvterm"
     end,
+    setup = function()
+      require("core.utils").load_mappings "nvterm"
+    end,
   },
 
   ["kyazdani42/nvim-web-devicons"] = {
+    after = "ui",
     module = "nvim-web-devicons",
     config = function()
       require("plugins.configs.others").devicons()
@@ -41,6 +50,7 @@ local plugins = {
     opt = true,
     setup = function()
       require("core.lazy_load").on_file_open "indent-blankline.nvim"
+      require("core.utils").load_mappings "blankline"
     end,
     config = function()
       require("plugins.configs.others").blankline()
@@ -82,16 +92,18 @@ local plugins = {
 
   -- lsp stuff
 
-  ["williamboman/nvim-lsp-installer"] = {
-    cmd = require("core.lazy_load").lsp_cmds,
-    setup = function()
-      require("core.lazy_load").on_file_open "nvim-lsp-installer"
+  ["williamboman/mason.nvim"] = {
+    cmd = require("core.lazy_load").mason_cmds,
+    config = function()
+      require "plugins.configs.mason"
     end,
   },
 
   ["neovim/nvim-lspconfig"] = {
-    after = "nvim-lsp-installer",
-    module = "lspconfig",
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "nvim-lspconfig"
+    end,
     config = function()
       require "plugins.configs.lspconfig"
     end,
@@ -100,7 +112,7 @@ local plugins = {
   -- load luasnips + cmp related in insert mode only
 
   ["rafamadriz/friendly-snippets"] = {
-    module = "cmp_nvim_lsp",
+    module = { "cmp", "cmp_nvim_lsp" },
     event = "InsertEnter",
   },
 
@@ -161,6 +173,9 @@ local plugins = {
     config = function()
       require("plugins.configs.others").comment()
     end,
+    setup = function()
+      require("core.utils").load_mappings "comment"
+    end,
   },
 
   -- file managing , picker etc
@@ -170,6 +185,9 @@ local plugins = {
     config = function()
       require "plugins.configs.nvimtree"
     end,
+    setup = function()
+      require("core.utils").load_mappings "nvimtree"
+    end,
   },
 
   ["nvim-telescope/telescope.nvim"] = {
@@ -177,15 +195,25 @@ local plugins = {
     config = function()
       require "plugins.configs.telescope"
     end,
+    setup = function()
+      require("core.utils").load_mappings "telescope"
+    end,
   },
 
   -- Only load whichkey after all the gui
   ["folke/which-key.nvim"] = {
+    -- disable = true,
     module = "which-key",
     config = function()
       require "plugins.configs.whichkey"
     end,
+    setup = function()
+      require("core.utils").load_mappings "whichkey"
+    end,
   },
+
+  -- Speed up deffered plugins
+  ["lewis6991/impatient.nvim"] = { module = "impatient" },
 }
 
 require("core.packer").run(plugins)
