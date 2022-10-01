@@ -1,0 +1,292 @@
+================================================================================
+Addition
+================================================================================
+
+12 + 34
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (binary_expression
+          (expression
+            (integer_literal))
+          (add_operator)
+          (expression
+            (integer_literal)))))))
+
+================================================================================
+Multiplication
+================================================================================
+
+12 * 34
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (binary_expression
+          (expression
+            (integer_literal))
+          (mult_operator)
+          (expression
+            (integer_literal)))))))
+
+================================================================================
+AddMul Precedence
+================================================================================
+
+1 + 2 * 3
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (binary_expression
+          (expression
+            (integer_literal))
+          (add_operator)
+          (expression
+            (binary_expression
+              (expression
+                (integer_literal))
+              (mult_operator)
+              (expression
+                (integer_literal)))))))))
+
+================================================================================
+Ternary operator
+================================================================================
+
+foo ? bar : baz
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (conditional_expression
+          (expression
+            (primary_expression
+              (id_expression)))
+          (expression
+            (primary_expression
+              (id_expression)))
+          (expression
+            (primary_expression
+              (id_expression))))))))
+
+================================================================================
+Primary expressions
+================================================================================
+
+(((foobar)))
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (primary_expression
+          (expression
+            (primary_expression
+              (expression
+                (primary_expression
+                  (expression
+                    (primary_expression
+                      (id_expression))))))))))))
+
+================================================================================
+Unary negation
+================================================================================
+
+!bar
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (unary_expression
+          (expression
+            (primary_expression
+              (id_expression))))))))
+
+================================================================================
+Logical unary negation
+================================================================================
+
+not bar
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (unary_expression
+          (expression
+            (primary_expression
+              (id_expression))))))))
+
+================================================================================
+Subscript
+================================================================================
+
+a[234][512]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (subscript_expression
+          (expression
+            (subscript_expression
+              (expression
+                (primary_expression
+                  (id_expression)))
+              (expression
+                (integer_literal))))
+          (expression
+            (integer_literal)))))))
+
+================================================================================
+Function call
+================================================================================
+
+f(1, 2, 3)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (function_expression
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))
+            (expression
+              (integer_literal))
+            (expression
+              (integer_literal))))))))
+
+================================================================================
+Function call with keyword arguments
+================================================================================
+
+f(1, 2, a: b, c: d)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (function_expression
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))
+            (expression
+              (integer_literal))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))))))))
+
+================================================================================
+Function call with trailing comma
+================================================================================
+
+f(1,)
+f(1, a: b,)
+f(1, a: b,
+)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (function_expression
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))))))
+    (statement
+      (expression
+        (function_expression
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))))))
+    (statement
+      (expression
+        (function_expression
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))))))))
+
+================================================================================
+Method call
+================================================================================
+
+foo.bar(1, 2, a: b, c: d)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (build_definition
+    (statement
+      (expression
+        (method_expression
+          (expression
+            (primary_expression
+              (id_expression)))
+          (function_id)
+          (argument_list
+            (expression
+              (integer_literal))
+            (expression
+              (integer_literal))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))
+            (keyword_item
+              (keyword_arg_key)
+              (expression
+                (primary_expression
+                  (id_expression))))))))))
