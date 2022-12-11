@@ -1,5 +1,0 @@
-type Str = string
-
-interface Stringer {
-  content Str
-}

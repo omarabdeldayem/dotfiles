@@ -1,5 +1,0 @@
-module workspace_did_change
-
-fn hello() string {
-	return 'world!'
-}

@@ -1,9 +1,0 @@
-enum Color {
-  red
-  green
-  blue
-}
-
-fn main() {
-  col := Color.blue
-}

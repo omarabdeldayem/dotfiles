@@ -1,8 +1,0 @@
-struct Person {
-  name string
-}
-
-fn main() {
-  person := Person{'Test'}
-  person.name
-}

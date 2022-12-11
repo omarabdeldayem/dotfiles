@@ -1,7 +1,0 @@
-struct Person {
-  name string
-}
-
-fn main() {
-  pr := Person{name: 'lol'}
-}

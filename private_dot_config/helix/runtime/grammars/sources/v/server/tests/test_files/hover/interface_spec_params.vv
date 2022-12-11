@@ -1,3 +1,0 @@
-interface Tester {
-	test(num int) int
-}

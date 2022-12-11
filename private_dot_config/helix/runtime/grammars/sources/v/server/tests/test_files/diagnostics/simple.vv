@@ -1,5 +1,0 @@
-module main
-
-import os
-
-fn foo() {

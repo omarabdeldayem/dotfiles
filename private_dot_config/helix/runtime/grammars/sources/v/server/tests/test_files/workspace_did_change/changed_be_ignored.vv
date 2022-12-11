@@ -1,3 +1,0 @@
-module workspace_did_change
-
-const foo = 1
