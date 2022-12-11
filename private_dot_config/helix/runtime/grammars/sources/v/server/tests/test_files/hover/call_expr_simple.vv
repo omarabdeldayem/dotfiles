@@ -1,7 +1,0 @@
-fn greet(name string) {
-  println(name)
-}
-
-fn main() {
-  greet('Ned')
-}

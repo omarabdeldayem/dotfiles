@@ -1,7 +1,0 @@
-module main
-
-import abc
-
-fn main() {
-  abc.
-}

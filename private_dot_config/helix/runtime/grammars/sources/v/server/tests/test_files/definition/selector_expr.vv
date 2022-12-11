@@ -1,8 +1,0 @@
-struct Zz {
-  counter int
-}
-
-fn main() {
-  zz := Zz{1}
-  zz.counter
-}

@@ -1,9 +1,0 @@
-package-lock.json
-node_modules
-build
-examples
-*.log
-test.ml
-test.mli
-target
-Cargo.lock

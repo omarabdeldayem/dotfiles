@@ -1,7 +1,0 @@
-module lexer
-
-import benchmark
-
-pub struct Tt {
-  benchmark benchmark.Benchmark = benchmark.new_benchmark()
-}
