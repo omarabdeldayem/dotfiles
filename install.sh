@@ -1,17 +1,24 @@
 # Applications list
 APPS=("zsh" "i3" "tmux" "gh")
 
+# Check if root
+if [ $UID = 0 ] ; then 
+  SUDO_PREFIX=""
+else
+  SUDO_PREFIX="sudo"
+fi
+
 # Install apps
 if [ -f "/etc/debian_version" ]; then
-  sudo apt-get install ${APPS[@]}
+  ${SUDO_PREFIX} apt-get -y install ${APPS[@]}
 else
-  sudo yum -y install ${APPS[@]}
+  ${SUDO_PREFIX} yum -y install ${APPS[@]}
 fi
 
 # Install NVIM
-gh repo clone neovim/neovim
+git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout v0.7.2
 make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+${SUDO_PREFIX} make install
 
