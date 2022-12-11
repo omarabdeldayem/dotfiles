@@ -1,42 +1,31 @@
 local opt = vim.opt
 local g = vim.g
-local config = require("core.utils").load_config()
 
-g.vim_version = vim.version().minor
-g.nvchad_theme = config.ui.theme
-g.toggle_theme_icon = "   "
-g.transparency = config.ui.transparency
-g.theme_switcher_loaded = false
-
--- use filetype.lua instead of filetype.vim. it's enabled by default in neovim 0.8 (nightly)
-if g.vim_version < 8 then
-  g.did_load_filetypes = 0
-  g.do_filetype_lua = 1
-end
-
-opt.laststatus = 3 -- global statusline
-opt.showmode = false
+local options = require("core.utils").load_config().options
 
 opt.title = true
-opt.clipboard = "unnamedplus"
+opt.clipboard = options.clipboard
+opt.cmdheight = options.cmdheight
 opt.cul = true -- cursor line
 
--- Indenting
-opt.expandtab = true
-opt.shiftwidth = 2
-opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
+-- Indentline
+opt.expandtab = options.expandtab
+opt.shiftwidth = options.shiftwidth
+opt.smartindent = options.smartindent
 
-opt.fillchars = { eob = " " }
-opt.ignorecase = true
-opt.smartcase = true
-opt.mouse = "a"
+-- disable tilde on end of buffer: https://github.com/neovim/neovim/pull/8546#issuecomment-643643758
+opt.fillchars = options.fillchars
+
+opt.hidden = options.hidden
+opt.ignorecase = options.ignorecase
+opt.smartcase = options.smartcase
+opt.mouse = options.mouse
 
 -- Numbers
-opt.number = true
-opt.numberwidth = 2
-opt.ruler = false
+opt.number = options.number
+opt.numberwidth = options.numberwidth
+opt.relativenumber = options.relativenumber
+opt.ruler = options.ruler
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -44,66 +33,31 @@ opt.shortmess:append "sI"
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
+opt.tabstop = options.tabstop
 opt.termguicolors = true
-opt.timeoutlen = 400
-opt.undofile = true
+opt.timeoutlen = options.timeoutlen
+opt.undofile = options.undofile
 
 -- interval for writing swap file to disk, also used by gitsigns
-opt.updatetime = 250
+opt.updatetime = options.updatetime
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
-g.mapleader = " "
+g.mapleader = options.mapleader
 
 -- disable some builtin vim plugins
-local default_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
-}
+local disabled_built_ins = require("core.utils").load_config().plugins.builtins
 
-for _, plugin in pairs(default_plugins) do
-  g["loaded_" .. plugin] = 1
+for _, plugin in pairs(disabled_built_ins) do
+   g["loaded_" .. plugin] = 1
 end
 
-local default_providers = {
-  "node",
-  "perl",
-  "python3",
-  "ruby",
-}
+--Defer loading shada until after startup_
+vim.opt.shadafile = "NONE"
 
-for _, provider in ipairs(default_providers) do
-  vim.g["loaded_" .. provider .. "_provider"] = 0
-end
-
--- set shada path
 vim.schedule(function()
-  vim.opt.shadafile = vim.fn.stdpath(g.vim_version > 7 and "state" or "data") .. "/shada/main.shada"
-  vim.cmd [[ silent! rsh ]]
+   vim.opt.shadafile = require("core.utils").load_config().options.shadafile
+   vim.cmd [[ silent! rsh ]]
 end)
