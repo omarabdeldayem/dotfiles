@@ -13,3 +13,7 @@ chezmoi init --apply https://github.com/omarabdeldayem/dotfiles.git
 chezmoi cd
 bash install.sh
 ```
+
+## nvim 
+
+Run :PackerInstall then :PackerCompile.

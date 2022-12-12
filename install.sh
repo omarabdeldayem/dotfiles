@@ -1,8 +1,8 @@
 # Applications list
-APPS=("zsh" "i3" "tmux" "gh" "ninja-build" "gettext" "libtool" "libtool-bin" "autoconf" "automake" "cmake" "g++" "pkg-config" "unzip" "curl" "doxygen")
+APPS=("zsh" "i3" "tmux" "gh" "ripgrep" "ninja-build" "gettext" "libtool" "libtool-bin" "autoconf" "automake" "cmake" "g++" "pkg-config" "unzip" "curl" "doxygen")
 
 # Check if root
-if [ $UID = 0 ] ; then 
+if [ $UID = 0 ] ; then
   SUDO_PREFIX=""
 else
   SUDO_PREFIX="sudo"
