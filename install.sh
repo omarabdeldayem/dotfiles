@@ -26,6 +26,7 @@ cd neovim
 git checkout v0.8.0
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 ${SUDO_PREFIX} make install
+cd ..
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
