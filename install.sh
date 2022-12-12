@@ -1,5 +1,7 @@
 # Applications list
-APPS=("zsh" "i3" "tmux" "gh" "ripgrep" "ninja-build" "gettext" "libtool" "libtool-bin" "autoconf" "automake" "cmake" "g++" "pkg-config" "unzip" "curl" "doxygen")
+APPS=("zsh" "i3" "tmux" "gh" "ripgrep" "ninja-build" "gettext" "libtool" "libtool-bin" 
+      "autoconf" "automake" "cmake" "g++" "pkg-config" "unzip" "curl" "doxygen" 
+      "shellcheck")
 
 # Check if root
 if [ $UID = 0 ] ; then
@@ -25,11 +27,14 @@ git checkout v0.8.0
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 ${SUDO_PREFIX} make install
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # TODO: Don't clobber by default
-cp -r nvim ~/.config/nvim
-cp -r i3 ~/.config/i3
-cp -r polybar ~/.config/polybar
+mkdir ~/.config
+cp -r ./nvim ~/.config/nvim
+cp -r ./i3 ~/.config/i3
+cp -r ./polybar ~/.config/polybar
 
 cp dot_zshrc ~/.zshrc
-cp -r dot_oh-my-zsh ~/.oh-my-zsh
-cp dot_tmux_conf ~/.tmux.conf
+cp dot_tmux.conf ~/.tmux.conf
