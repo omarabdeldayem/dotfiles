@@ -1,0 +1,36 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-l": "editor::ToggleFold"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space t i": "editor::ToggleInlayHints",
+      "space a i": "agent::ToggleFocus",
+      "space c": "editor::ToggleComments",
+      "g f": "editor::OpenExcerpts"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space .": "editor::ToggleCodeActions",
+      "s s": "outline::Toggle",
+      "s S": "project_symbols::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  {
+    "context": "Editor && vim_mode == insert && !VimWaiting && !menu",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  }
+]
